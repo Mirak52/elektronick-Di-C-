@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:elektroDiar"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="720" Width="1280">
     <Grid>
-        
+        <ListView Margin="384,10,9.6,48.4" FontSize="20" MaxWidth="920" Name="Notes" SelectionMode="Single" Background="White" SelectionChanged="Notes_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding name}" />
+                    <GridViewColumn Header="LastName" Width="200" DisplayMemberBinding="{Binding lastName}" />
+                    <GridViewColumn Header="Age" Width="75" DisplayMemberBinding="{Binding age}" />
+                    <GridViewColumn Header="Sex" Width="100" DisplayMemberBinding="{Binding sex}" />
+                    <GridViewColumn Header="Date" Width="100" DisplayMemberBinding="{Binding Date}" />
+                    <GridViewColumn Header="Phone" Width="100" DisplayMemberBinding="{Binding phone}" />
+                    <GridViewColumn Header="Email" Width="100" DisplayMemberBinding="{Binding price}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Width="369" HorizontalAlignment="Left" Margin="10,10,0,0.4">
+            <Label HorizontalAlignment="Center"  Width="300" Content="Enter name"/>
+            <TextBox x:Name="nameSave" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap" />
+            <TextBlock/>
+            <Label HorizontalAlignment="Center"  Width="300" Content="Enter lastname"/>
+            <TextBox x:Name="lastNameSave" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap" />
+            <TextBlock/>
+            <Label HorizontalAlignment="Center"  Width="300" Content="Enter age"/>
+            <TextBox x:Name="ageSave" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap" />
+            <TextBlock/>
+            <Label HorizontalAlignment="Center"  Width="300" Content="Enter sex"/>
+            <TextBox x:Name="sexSave" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap" />
+            <TextBlock/>
+            <Label HorizontalAlignment="Center"  Width="300" Content="Enter date"/>
+            <TextBox x:Name="dateSave" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap" />
+            <TextBlock/>
+            <Label HorizontalAlignment="Center"  Width="300" Content="Enter phone number"/>
+            <TextBox x:Name="phoneSave" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap" />
+            <TextBlock/>
+            <Label HorizontalAlignment="Center"  Width="300" Content="Enter email"/>
+            <TextBox x:Name="emailSave" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap" />
+            <TextBlock/>
+            <Button x:Name="Save" HorizontalAlignment="Center" Content="Save" FontSize="30" Height="45" Width="300" />
+        </StackPanel>
     </Grid>
 </Window>

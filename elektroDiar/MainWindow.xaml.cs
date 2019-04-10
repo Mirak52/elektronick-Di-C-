@@ -24,5 +24,10 @@ namespace elektroDiar
         {
             InitializeComponent();
         }
+
+        private void Notes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
