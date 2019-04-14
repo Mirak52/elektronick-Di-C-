@@ -5,47 +5,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:elektroDiar"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280">
+        Title="MainWindow" Height="900" Width="1600">
     <Grid>
-        <ListView Margin="384,10,9.6,48.4" FontSize="20" MaxWidth="920" Name="Notes" SelectionMode="Single" Background="White" SelectionChanged="Notes_SelectionChanged">
+        <ListView Margin="384,200,-0.4,27.4" FontSize="20" MaxWidth="1200" Name="Notes" SelectionMode="Single" Background="White" SelectionChanged="Notes_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding name}" />
-                    <GridViewColumn Header="LastName" Width="200" DisplayMemberBinding="{Binding lastName}" />
+                    <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding name}" />
+                    <GridViewColumn Header="LastName" Width="150" DisplayMemberBinding="{Binding lastName}" />
                     <GridViewColumn Header="Age" Width="75" DisplayMemberBinding="{Binding age}" />
                     <GridViewColumn Header="Sex" Width="100" DisplayMemberBinding="{Binding sex}" />
-                    <GridViewColumn Header="Date" Width="100" DisplayMemberBinding="{Binding Date}" />
-                    <GridViewColumn Header="Phone" Width="100" DisplayMemberBinding="{Binding phone}" />
-                    <GridViewColumn Header="Email" Width="100" DisplayMemberBinding="{Binding price}" />
+                    <GridViewColumn Header="Date" Width="120" DisplayMemberBinding="{Binding date}" />
+                    <GridViewColumn Header="Phone" Width="120" DisplayMemberBinding="{Binding phone}" />
+                    <GridViewColumn Header="Email" Width="150" DisplayMemberBinding="{Binding email}" />
+                    <GridViewColumn Header="Note" Width="330" DisplayMemberBinding="{Binding note}" />
                 </GridView>
             </ListView.View>
         </ListView>
         <StackPanel Width="369" HorizontalAlignment="Left" Margin="10,10,0,0.4">
-            <Label HorizontalAlignment="Center"  Width="300" Content="Enter name"/>
+            <Label HorizontalAlignment="Center"  Width="300" Content="Enter name" FontWeight="Bold" FontSize="16"/>
             <TextBox x:Name="nameSave" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap" />
             <TextBlock/>
-            <Label HorizontalAlignment="Center"  Width="300" Content="Enter lastname"/>
+            <Label HorizontalAlignment="Center"  Width="300" Content="Enter lastname" FontWeight="Bold" FontSize="16"/>
             <TextBox x:Name="lastNameSave" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap" />
             <TextBlock/>
-            <Label HorizontalAlignment="Center"  Width="300" Content="Enter age"/>
+            <Label HorizontalAlignment="Center"  Width="300" Content="Enter age" FontWeight="Bold" FontSize="16"/>
             <TextBox x:Name="ageSave" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap" />
             <TextBlock/>
-            <Label HorizontalAlignment="Center"  Width="300" Content="Enter sex"/>
-            <RadioButton x:Name="radB1" IsChecked="True" HorizontalAlignment="Center"  Width="300" Content="Man"/>
-            <RadioButton x:Name="radB2" HorizontalAlignment="Center"  Width="300" Content="Woman"/>
+            <Label HorizontalAlignment="Center"  Width="300" Content="Enter sex" FontWeight="Bold" FontSize="16"/>
+            <RadioButton x:Name="radB1" IsChecked="True" HorizontalAlignment="Center"  Width="300" Content="Man" FontWeight="Bold" FontSize="16"/>
+            <RadioButton x:Name="radB2" HorizontalAlignment="Center"  Width="300" Content="Woman" FontWeight="Bold" FontSize="16"/>
 
             <TextBlock/>
-            <Label HorizontalAlignment="Center"  Width="300" Content="Enter date"/>
+            <Label HorizontalAlignment="Center"  Width="300" Content="Enter date" FontWeight="Bold" FontSize="16"/>
             <DatePicker x:Name="dateP" HorizontalAlignment="Center" Text="Choose date" Width="300"/>
             <TextBlock/>
-            <Label HorizontalAlignment="Center"  Width="300" Content="Enter phone number"/>
+            <Label HorizontalAlignment="Center"  Width="300" Content="Enter phone number" FontWeight="Bold" FontSize="16"/>
             <TextBox x:Name="phoneSave" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap" />
             <TextBlock/>
-            <Label HorizontalAlignment="Center"  Width="300" Content="Enter email"/>
+            <Label HorizontalAlignment="Center"  Width="300" Content="Enter email" FontWeight="Bold" FontSize="16"/>
             <TextBox x:Name="emailSave" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap" />
+            <Label HorizontalAlignment="Center"  Width="300" Content="Enter note" FontWeight="Bold" FontSize="16"/>
+            <TextBox x:Name="noteSave" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap" />
             <TextBlock/>
-            <Button x:Name="Save" HorizontalAlignment="Center" Content="Save" FontSize="30" Height="45" Width="300" Click="Save_Click" />
-            <Label x:Name="ErrorL"  HorizontalAlignment="Center" Content="" FontSize="30" Height="45" Width="300" Foreground="Red" ></Label>
+            <Button x:Name="Save" HorizontalAlignment="Center" Content="SAVE" FontSize="30" Height="45" Width="300" Click="Save_Click" />
+            <Label x:Name="ErrorL"  HorizontalAlignment="Center" Content="" Height="45" Width="300" Foreground="Red" FontWeight="Bold" FontSize="16" />
         </StackPanel>
+        <StackPanel Margin="379,10,863.6,-9.6">
+            <Label Content="Search by name: " HorizontalAlignment="Center"  FontSize="16" FontWeight="Bold"/>
+            <TextBox x:Name="searchName" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap" />
+            <Label Content="search by email: " HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"/>
+            <TextBox x:Name="searchEmail" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap"  />
+            <Label />
+            <Button x:Name="SearchB" Content="SEARCH" HorizontalAlignment="Center" Width="300"  Height="38" FontSize="18" Click="SearchB_Click"/>
+        </StackPanel>
+        <StackPanel Margin="730,41,512.6,670.4">
+            <Button x:Name="DeleteB" Content="DELETE ALL" HorizontalAlignment="Center" Width="300"  Height="38" FontSize="18" Click="DeleteB_Click" />
+            <Label Height="15"/>
+            <Button x:Name="EditB" Content="EDIT MODE" HorizontalAlignment="Center" Width="300"  Height="38" FontSize="18" Click="EditB_Click" />
+            <Label Height="15"/>
+            <Button x:Name="RefreshB" Content="REFRESH" HorizontalAlignment="Center" Width="300"  Height="38" FontSize="18" Click="RefreshB_Click" />
+         </StackPanel>
     </Grid>
 </Window>
