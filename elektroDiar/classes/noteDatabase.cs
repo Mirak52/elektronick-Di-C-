@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace elektroDiar.classes
 {
-    class NoteDatabase
+    public class NoteDatabase
     {
         public SQLiteAsyncConnection database;
 

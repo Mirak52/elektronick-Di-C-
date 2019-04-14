@@ -31,10 +31,12 @@
             <TextBox x:Name="ageSave" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap" />
             <TextBlock/>
             <Label HorizontalAlignment="Center"  Width="300" Content="Enter sex"/>
-            <TextBox x:Name="sexSave" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap" />
+            <RadioButton x:Name="radB1" IsChecked="True" HorizontalAlignment="Center"  Width="300" Content="Man"/>
+            <RadioButton x:Name="radB2" HorizontalAlignment="Center"  Width="300" Content="Woman"/>
+
             <TextBlock/>
             <Label HorizontalAlignment="Center"  Width="300" Content="Enter date"/>
-            <TextBox x:Name="dateSave" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap" />
+            <DatePicker x:Name="dateP" HorizontalAlignment="Center" Text="Choose date" Width="300"/>
             <TextBlock/>
             <Label HorizontalAlignment="Center"  Width="300" Content="Enter phone number"/>
             <TextBox x:Name="phoneSave" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap" />
@@ -42,7 +44,8 @@
             <Label HorizontalAlignment="Center"  Width="300" Content="Enter email"/>
             <TextBox x:Name="emailSave" HorizontalAlignment="Center"  Width="300" Height="35"  TextWrapping="Wrap" />
             <TextBlock/>
-            <Button x:Name="Save" HorizontalAlignment="Center" Content="Save" FontSize="30" Height="45" Width="300" />
+            <Button x:Name="Save" HorizontalAlignment="Center" Content="Save" FontSize="30" Height="45" Width="300" Click="Save_Click" />
+            <Label x:Name="ErrorL"  HorizontalAlignment="Center" Content="" FontSize="30" Height="45" Width="300" Foreground="Red" ></Label>
         </StackPanel>
     </Grid>
 </Window>

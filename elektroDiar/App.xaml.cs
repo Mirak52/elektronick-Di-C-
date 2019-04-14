@@ -1,4 +1,5 @@
-﻿using System;
+﻿using elektroDiar.classes;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,19 @@ namespace elektroDiar
     /// </summary>
     public partial class App : Application
     {
+        public static NoteDatabase _Note;
+
+        public static NoteDatabase NoteDatabase
+        {
+            get
+            {
+                if (_Note == null)
+                {
+                    var fileHelper = new FileHelper();
+                    _Note = new NoteDatabase(fileHelper.GetLocalFilePath("TodoSQLite.db3"));
+                }
+                return _Note;
+            }
+        }
     }
 }
